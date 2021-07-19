@@ -5,6 +5,14 @@
         <meta charset="utf-8" lang="ja">
     </head>
     <body>
+        <script src="../../../assets/code/js/header.js"></script>
+        <script>
+            headerender();
+        </script>
+        <!-- こーど -->
+        <script src="../../../assets/code/js/bedrock_and_java_seed_generator.js"></script>
+        <script src="../../../assets/code/js/bedrock_to_java_seed_convertor.js"></script>
+        <script src="../../../assets/code/js/java_to_bedrock_seed_convertor.js"></script>
         <div id=body class=body>
             <div id=header class=body_header>
                 <!-- 目に見える文字 -->
@@ -41,7 +49,7 @@
                 // コードは今後改善していきたいと考えています。
 
                 // --- ベース --- //
-                function base(){ // falcoからbaseに変更しました。
+                function base(){
                     // TODO: どこかでこれを使用する。
                     console.log('作った人ラベルを準備しています。。。');
                     let tsukutta_hito = '栗君';
@@ -55,118 +63,8 @@
                     }
                     console.log('多分作った人ラベルの準備に終了しました。これ意味あるんですかね。');
                 }
-
-                // --- Java EditionとBedrock Edition両方で使えるシード値ジェネレータのfunctionコード --- //
-                function bedrock_and_java() {
-                    base();
-
-                    let counterrr = 0;
-                    let textbox = document.getElementById("generato_count_be_je_same")
-                    let counterrrmax = textbox.value
-
-                    console.log(textbox);
-                    console.log(counterrrmax);
-
-                    console.log('りんりんせいせいちゅ～～～～～');
-                    //let counterrrmax = 128;
-                    console.log('生成カウンターは' + counterrrmax + 'なので、' + counterrrmax + '個数値を生成させます。');
-                    let generator = '';
-                    let generating_num = 0;
-                    let counterrrmaxb = 0;
-                    let tsuika_osirase = '';
-                    let generating_num_data = 0;
-                    if(counterrrmax > 1024){
-                        console.log('数字が多すぎたため、1024に設定します。');
-                        counterrrmaxb = 1024;
-                        tsuika_osirase = '生成個数が多過ぎたため、端末の負担対策で1024に設定されました。';
-                    }if(counterrrmax != (Math.round(counterrrmax * 1))){
-                        
-                    }else{
-                        console.log('生成を開始します。');
-                        counterrrmaxb = counterrrmax;
-                    }
-                    while (counterrr < counterrrmaxb) {
-                        generating_num_data = '';
-                        generating_num = (Math.round((Math.random(0,1)-0.5)*4294967295));
-                        if(generating_num < 0){
-                            generating_num_data = generating_num + 4294967296;
-                        }
-                        generator = generator + '\n' + (counterrr + 1) + '個目：' + generating_num;
-                        if(generating_num_data != ''){
-                            generator = generator + '（' + generating_num_data + '）';
-                        }
-                        console.log('生成中ですよん！：' + ((counterrr/counterrrmax)*100) + '%');
-                        counterrr = counterrr + 1;
-                    }
-                    // 非推奨タグって聞いたんですけど、代わりがよくわからないので一時期的にこれを使ってます。。。
-                    document.write('<button type="button" onclick="reload_page();">メインページに戻る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>マイナス数値のシード値は（）の中にJava Edition専用のシード値があります。（）の外にあるマイナス数値はBedrock Edition用で、Java Editionで使っても全く違う地形を生成します。<br>マイナス記号ではない場合、両方そのまま使えます。<br><br><span style=color:red;>' + tsuika_osirase + '</span><br><br>// --- 作ったよ --- // <br><textarea cols=50 rows=20>' + generator + '</textarea><br><br>/// ----- 数字生成機終了線 ----- ///');
-                    if(generator != ''){
-                        console.log('せいせいかんりょー！');
-                    }else{
-                        console.log('JavaScriptが正常に動作していないか、ブラウザかスクリプトが古いです。');
-                    }
-                }
-
                 function reload_page(){
                     location.reload();
-                }
-
-                // --- Bedrock Editionのシード値をJava Editionに変換する --- //
-                function bedrock_to_java(){
-                    base();
-                    let textbox = document.getElementById("generato_count_be_to_je");
-                    let old_seed = textbox.value;
-
-                    console.log('シード値変換を開始します。。。');
-
-                    //let old_seed = '';
-                    if((old_seed<-2147483648) || ((old_seed * 1) != Math.round(old_seed * 1))){
-                            new_seed = 'Bedrock Editionはこの元々シード値を使用できません。';
-                            console.log('Bedrock Editionは元々このシード値に対応していないようです。');
-                    }else{ // JavaScriptってelseif無いの知りませんでした。
-                        if(old_seed<0){
-                            new_seed = (old_seed * 1) + (4294967296);
-                        }else{
-                            new_seed = old_seed;
-                        }
-                    }
-
-                    // 非推奨タグって聞いたんですけど、代わりがよくわからないので一時期的にこれを使ってます。。。
-                    document.write('<button type="button" onclick="reload_page();">メインページに戻る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Bedrock Editionのシード値をJava Edition専用に変換します。<br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値: <input type=number value="' + old_seed + '"><br>変換後シード値：[<span style=color:yellowgreen;><input type=number value="' + new_seed + '"></span>]');
-                    if(old_seed != ''){
-                        console.log('変換に成功しました太たたた');
-                    }else{
-                        console.log('JavaScriptが正常に動作していないか、ブラウザかスクリプトが古いです。');
-                    }
-                }
-
-                // --- Java Editionのシード値をBedrock Editionに変換する --- //
-                function java_to_bedrock(){
-                    base();
-                    let textbox = document.getElementById("generato_count_je_to_be");
-                    let old_seed = textbox.value;
-
-                    console.log('シード値変換を開始します。。。。。。。。。。。。。。。。。。。');
-
-                    //let old_seed = '';
-                    if((old_seed<0) || (old_seed > 4294967295) || ((old_seed * 1) != Math.round(old_seed * 1))){
-                            new_seed = '残念ながらこのシード値はBedrock Edition専用に変換できません。';
-                            console.log('残念ながらこのシード値はBedrock Edition専用に変換できません。');
-                    }else{ // JavaScriptってelseif無いの知りませんでした。
-                        if(old_seed>2147483647){
-                            new_seed = (old_seed * 1) - (4294967296);
-                        }else{
-                            new_seed = old_seed;
-                        }
-                    }
-
-                    // 非推奨タグって聞いたんですけど、代わりがよくわからないので一時期的にこれを使ってます。。。
-                    document.write('<button type="button" onclick="reload_page();">メインページに戻る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Java Editionのシード値をBedrock Edition専用に変換します。<br><span color=red;>32bit以内のシード値しか変換できません。マイナス記号付きのシード値も変換できません。</span><br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値：[<input type=text value="' + old_seed + '">] <br>変換後シード値: <input type=number value="' + new_seed + '">');
-                    if(old_seed != ''){
-                        console.log('変換に成功しました太たたた');
-                    }else{
-                        console.log('JavaScriptが正常に動作していないか、ブラウザかスクリプトが古いです。');
-                    }
                 }
             </script>
         </div>

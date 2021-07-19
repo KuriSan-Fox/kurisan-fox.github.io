@@ -5,40 +5,19 @@
         <meta charset="utf-8" lang="ja">
     </head>
     <body>
+        <script src="../../assets/code/js/header.js"></script>
+        <script>
+            headerender();
+        </script>
         <button type="button" onclick="reload_page();">ページリロード</button> / <a href="index.html">インデックスにする</a> / <a href="../あジェネレーター/">フォルダー指定にする</a>
         <!-- コード -->
-        <p>このページを使用してスクショして投稿などの際は自己責任でお願いします。<br>開発者<a href="https://twitter/!#/KuriSan_Fox/"></a>は一切責任を負いません。<br>トラブルや著作権がどーのこーのも同様です。完全自己責任です。<br>あと他人を巻き込んだり攻撃するみたいなのもやめてください。</p><br>
+        <p>このページを使用してスクショして投稿などの際は自己責任でお願いします。<br>開発者<a href="https://twitter/!#/KuriSan_Fox/"></a>は一切責任を負いません。<br>トラブルや著作権がどーのこーのも同様です。完全自己責任です。<br>あと他人を巻き込んだり攻撃するみたいなのもやめてください。<br>ちょっと狂ってる方の変なツイートを元ネタにそれを進化させ、わかりやすく、だれでも作れるようにした世界一いらないツールでございます。</p><br>
         <p>作成する文字の文字数を入力してください：</p>
         <input id="agemotimoti" type="text">
         <button onclick="abcdefg();">作る</button>
         <br><p>軽量化専用オプション：</p>１つの生成に使う「あ」の数：<input id="agemotimoti_no_kazu" type="number"><br>フォントサイズ：<input id="agemotimoti_suze" type=text>（pxなども入力してください）<br>
         <br>元ネタ：<blockquote class="twitter-tweet"><p lang="und" dir="ltr"><a href="https://t.co/r7BP5xVJ9Y">pic.twitter.com/r7BP5xVJ9Y</a></p>&mdash; agemotilikeの裏垢兼本垢　雀かわいい　ちゅんちゅんちゅん (@agemotilike) <a href="https://twitter.com/agemotilike/status/1411952542049705989?ref_src=twsrc%5Etfw">July 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <div style="color:grey;font-size:10px;">（なにがあったかはウェイバックマシーンとかで確認してください）</div>
-        <!--<br>以下はスタイルや見た目などのカスタマイズエリアです。悪用したりしないでください。-->
-        <!--<p>カスタムスタイルシートの追加：</p>
-<textarea id=customstyle_css rows=20 cols=100>/* コードを入力してください。 */
-    
-/* 例： body {color:red;background-color:black;} */
-/* 注意：CSSの知識が必要です。古いhtmlコードは対応していません */
-/* ちなみに、bodyは生成した「あ」のみに適用されます。カスタムHTMLには適用されません。classを使用すればトップとボトムで使えるかもです。 */
-</textarea>
-<br><p>カスタムHTML</p>
-<p>　トップ</p>
-<textarea id=customhtml_top rows=20 cols=100>--><!-- コードを入力してください。 -->
-<!-- 注意：HTML5の知識が必要です。古いhtmlコードは多分対応していません -->
-<!--</textarea>
-<p>　ボトム</p>
-<textarea id=customhtml_bottom rows=20 cols=100>--><!-- コードを入力してください。 -->
-<!-- トップに書いてある注意書きと同様です -->
-<!--</textarea>
-<br><p>カスタムスクリプト</p>
-<p>　JavaScriptで書いてください</p>
-<textarea id=customjavascript_script rows=20 cols=100>
-// 多少のJavaScriptの知識が必要です。
-// カスタムHTMLや自動実行はされません。カスタムHTMLでonlickなどを使用して実行させてください。
-// コードを入力してください。
-// !--- Javaではありません！！！！！！ ---! //
-</textarea>-->
         <script>
             function reload_page(){
                 location.reload();
@@ -46,16 +25,7 @@
             function abcdefg(){
                 ff();
             }
-            function ff(){/*
-                let custom_top_html = 0;
-                custom_top_html = (document.getElementById('customhtml_top').value);
-                let custom_bottom_html = 0;
-                custom_bottom_html = (document.getElementById('customhtml_bottom').value);
-                let custom_style_css = 0;
-                custom_style_css = (document.getElementById('customstyle_css').value);
-                let custom_script_javascript = 0;
-                custom_script_javascript = (document.getElementById('customjavascript_script').value);*/
-
+            function ff(){
                 let aaaaaaaa = 0; // 最大
                 aaaaaaaa = (document.getElementById('agemotimoti_no_kazu').value);
                 if(aaaaaaaa>256){ // 重くなるから
@@ -101,11 +71,16 @@
                     agemoti = agemoti + aaaaaa;
                     console.log(agemoti_num);
                 }
-                //document.write('<head><title>あげもちが作ったページをカスタマイズ</title><style>' + custom_style_css + '</style></head><body style="font-size:' + fontsizee + ';' + '">' + agemoti + '<as>' + customjavascript_script + '');
                 document.write('<head><title>' + fontsizee + '</title></head><body style="font-size:' + fontsizee + ';">' + agemoti + '</body>');
                 console.log('成功');
                 console.log('合計' + (aaaaaaaa * agemoti_num_max) + '個「あ」を作成しました！');
             }
         </script>
+                    <script src="../../assets/code/js/general.js"></script>
+                    <script>
+                        copyright();
+                        copyright_default();
+                        copyright_bottom();
+                    </script>
     </body>
 </html>

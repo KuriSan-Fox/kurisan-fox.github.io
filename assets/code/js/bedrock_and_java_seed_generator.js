@@ -16,10 +16,10 @@ function bedrock_and_java() {
     let counterrrmaxb = 0;
     let tsuika_osirase = '';
     let generating_num_data = 0;
-    if(counterrrmax > 65535){
-        console.log('数字が多すぎたため、65535に設定します。');
-        counterrrmaxb = 65535;
-        tsuika_osirase = '生成個数が多過ぎたため、端末の負担対策で65535に設定されました。';
+    if(counterrrmax > 1024){
+        console.log('数字が多すぎたため、1024に設定します。');
+        counterrrmaxb = 1024;
+        tsuika_osirase = '生成個数が多過ぎたため、端末の負担対策で1024に設定されました。';
     }if(counterrrmax != (Math.round(counterrrmax * 1))){
         
     }else{
