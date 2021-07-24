@@ -1,5 +1,6 @@
 let now_url = location.href;
 let counter = 0;
+let website_host = location.href;
 nisemono_checker();
 // ほぼすべてのhtmlで使うコードはここに書くと思います。
 // JSが嫌いになりそうでした。
