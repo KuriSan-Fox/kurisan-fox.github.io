@@ -54,7 +54,7 @@ function copyright_bottom(){
 
 function nisemono_checker() {
     counter = (counter + 1);
-    if (website_host == 'https://kurisan-fox.github.io/') {
+    if ((website_host == 'https://kurisan-fox.github.io/') && (website_host != 'web.archive.org')) {
         console.log('正しいページです。');
     }else{
         if(website_host == 'a'){
