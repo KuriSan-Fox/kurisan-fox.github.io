@@ -1,3 +1,6 @@
+let now_url = location.href;
+let counter = 0;
+nisemono_checker();
 // ほぼすべてのhtmlで使うコードはここに書くと思います。
 // JSが嫌いになりそうでした。
 
@@ -46,4 +49,24 @@ function copyright_bottom(){
     console.log(html_code_bottom_credit);
     document.write(html_code_bottom_credit);
     console.log('functuin「copyright_bottom」を呼び出しました！');
+}
+
+function nisemono_checker() {
+    counter = (counter + 1);
+    if (website_host == 'https://kurisan-fox.github.io/') {
+        console.log('正しいページです。');
+    }else{
+        if(website_host == 'a'){
+            console.log('クローンされたことが検知されました。');
+        }else{
+            while(counter<255){
+                counter += 1;
+                document.write('<body><div id=body style="position:fixed;top:0px;bottom:0px;right:0px;left:0px;color:white;font-size:25px;background-color:#CE3426;">まだある。。。</div></body>');
+            }
+            console.log('正しいページではないことが検知されました。');
+            timing_ut = Math.floor(new Date);
+            timing_ut_fixed = (timing_ut*1);
+            document.write('<head><title>エラー番号：' + (website_open_time) + '</title></head><body><div id=body style="position:fixed;top:0px;bottom:0px;right:0px;left:0px;color:white;font-size:25px;background-color:#c40000;"><p style="font-size:35px;">早くアクセスを遮断してください！！！！</p>' + location.host + 'は、元のページと一切関係がありません。もしフォームがあっても、パスワードを入力しないでください。<br>または、GitHubがドメイン名を変更したためリポジトリ所有者が気づいていないか、失踪しているため更新されていません。<br>ウェイバックマシンなどでも表示される可能性があります（元はウェイバックマシン対策です）。<br><br>- 別のページへ行く -<br><a href="https://google.com/" style="color:blue;">Google</a>（URLをちゃんと確認してください。）</div></body>');
+        }
+    }
 }

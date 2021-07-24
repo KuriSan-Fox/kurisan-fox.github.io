@@ -1,14 +1,17 @@
 // 頭部に表示させるメッセージ専用のコード。
 
+let notice_html_code = 0;
+let notice_html_code_kaitahito ='KuriSan_Fox';
+let notice_html_code_kaitahito_url = 'https://twitter.com/#!/@';
+let notice_html_code_kaitahito_style = 'background-color:red; border:red solid; color:white; font-size:16px;';
+let website_host = location.host;
+let website_open_time = new Date;
+
 // --- お知らせ --- //
 function headerender(){
 console.log('頭部におしらせ見ることに成功した！！！！');
 let notice_ = 0; // 怖いので一応
 notice_ = '一部htmlをJSに移行中です。このお知らせ的なそれもコード置いて表示させてます、一部ページでは表示されない可能性があります。';
-let notice_html_code = 0;
-let notice_html_code_kaitahito ='KuriSan_Fox';
-let notice_html_code_kaitahito_url = 'https://twitter.com/#!/@';
-let notice_html_code_kaitahito_style = 'background-color:red; border:red solid; color:white; font-size:16px;';
 if((notice_html_code=0)||(notice_html_code='')){
 notice_html_code = '';
 }else{
@@ -21,6 +24,7 @@ notice_html_code = '<div style="' + notice_html_code_kaitahito_style +'" id=top_
 document.writeln(notice_html_code);
 }
 
+// --- デバッグコード --- //
 function kusocode() {
     let a = ['a','b','c'];
     let b = [ 'a2', 'b2', 'c2' ];
