@@ -28,9 +28,14 @@ let thread_owner_name = 0;
 let thread_description = 0;
 let success_count = 0;
 let thread_dummy_id = 0;
-
+let thread_res_creation = 0;
+let thread_res_youbi= new Array("日","月","火","水","木","金","土");
+let alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','/'];
+let thread_owner_ID = ((alphabet[(Math.floor(Math.random(0,1)*63))]) + alphabet[(Math.floor(Math.random(0,1)*63))] + alphabet[(Math.floor(Math.random(0,1)*63))] + alphabet[(Math.floor(Math.random(0,1)*63))] + alphabet[(Math.floor(Math.random(0,1)*63))] + alphabet[(Math.floor(Math.random(0,1)*63))] + alphabet[(Math.floor(Math.random(0,1)*63))] + alphabet[(Math.floor(Math.random(0,1)*63))] + alphabet[(Math.floor(Math.random(0,1)*63))]);
+console.log(thread_owner_ID);
+let thread_ress_count = 1;
 function create_new(){
-    check();
+    //check();
     success_count = 0;
     console.log('スレッド作成を開始します。。。');
     // --- スレタイ準備 --- //
@@ -126,13 +131,18 @@ function thread_render(){
     get_unixtime = get_date.getTime();
     get_unixtime_b = Math.floor( get_unixtime / 1000 );
     get_unixtime_a = Math.floor(get_unixtime);
+    thread_res_creation = new Date();
     console.log('スレッドID：' + get_unixtime_a);
     thread_dummy_id = (get_unixtime_a);
     /*const element = document.querySelector('div');
     element.remove();*/
     success_count = 4;
+    // スレッドID（仮）
     window.location.href = ('?thread_id=' + thread_dummy_id + 'creation=true#');
-    document.write('<head><title>【偽２ちゃんねる】- '
-     + thread_title
-     + '</title></head><body style=color:black;background-color:#EFEFEF;position:relative;padding-bottom:15px;><div id=body><div id=txt_1 style="font-size:20px;padding-bottom:25px;"><a href="">偽２ちゃんねるの掟とは？</a></div><a href="">偽２ちゃんねる</a> <a href="">スマホ用</a> <a href="">■掲示板へ戻る■</a> <a href="">全部</a> <a href="">1-</a> <a href="">最新50</a><hr><div id=title style=color:red;font-size:25px;>' + thread_title + '</div><div style="position:absolute;right:0px;top:45px;">[PR]<a href="https://twitter.com/#!/KuriSan_Fox">みんな、元気～？</a>[PR]</div></body></html>');
+    // スレッド書き込みふぉーむ
+    document.write('<div id="kakikomi" style="position:absolute;bottom:-200px;left:0px;right:0px;"><div style="text-align:center;"><a href="">リロード[Ctrl+R]</a> <a href="">新着レスの表示</a> / <small><a href="">スレッドの保存</a></small></div><hr>　⇒<hr><a href="">掲示板に戻る</a> <a href="">全部</a> <a href="">前100</a> <a href="">次100</a> <a href="">最新50</a><br><script src="../../assets/code/js/2ch_lie_thread_generator_sub.js"></script><button onclick="ress();"><a href="#kakikomi">書き込む</a></button>名前：<input type=name id="ress_name"> E-mail<small>飾り</small>：<input type=ress_email_address><div id=create_ress_desc><textarea cols=64 rows="6" id=ress_description></textarea></div><br></div>');
+    // スレッドレンダー
+    document.writeln('<head><title>【偽２ちゃんねる】- '+ thread_title+ '</title></head><body style=color:black;background-color:#EFEFEF;position:relative;padding-bottom:15px;><div id=body><div id=txt_1 style="font-size:20px;padding-bottom:25px;"><a href="">偽２ちゃんねるの掟とは？</a></div><a href="">偽２ちゃんねる</a> <a href="">スマホ用</a> <a href="">■掲示板へ戻る■</a> <a href="">全部</a> <a href="">1-</a> <a href="">最新50</a><hr><div id=title style=color:red;font-size:25px;>' + thread_title + '</div><div style="position:absolute;right:0px;top:45px;">[PR]<a href="https://twitter.com/#!/KuriSan_Fox">みんな、元気～？</a>[PR]</div></body></html>');
+    document.writeln('<br>1 ：<span style="color:green;  white-space: pre-wrap;">' + thread_owner_name + '</span>：' + (thread_res_creation.getFullYear()) + '/' + (thread_res_creation.getMonth()+1) + '/' + (thread_res_creation.getDate()) + '（' + thread_res_youbi[thread_res_creation.getDay()] + '） ' + thread_res_creation.getHours() + ':' + thread_res_creation.getMinutes() + ':' + thread_res_creation.getSeconds() + '<small style="color:gray;">.' + Math.floor(thread_res_creation.getMilliseconds()*0.1) + '</small>' + ' ID: ' + thread_owner_ID);
+    document.writeln('<br>　　 ' + thread_description);
 }

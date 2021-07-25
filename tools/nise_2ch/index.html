@@ -5,25 +5,22 @@
         <meta charset="utf-8" lang="ja">
         <link rel=stylesheet href="../../assets/style/css/gen_nise2ch.css">
         <style>
-            .testttt{
-                position:absolute
-            }
         </style>
     </head>
     <body>
         <script src="../../assets/code/js/header.js"></script>
         <script>
             headerender();
-        </script>
+        </script><br>んなわけで、ベータ運用中です。<br>まだ改行がしっかりとできてないので、改行する際は手動で改行コードを打ち込んでください（\u003cbr\u003e）。<br>[書き込む前に読んでね]は確認してね。<br>
         <!-- スマホで開くとなぜかフォントサイズが壊れるので、このdiv内で全コードを書いています。 -->
         <!-- 問題点やもっといい方法あるよ！という意見などがあればTwitterなどで連絡できる場所ならどこでもいいので教えてくれるとめっちゃ助かります！ -->
         <div id=body class=body style="color:black;background-color:rgb(218,255,218); border: solid black 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;">
             <div id=new_thread_border_a>
                 <!-- スレッド作成画面 -->
                 <div id=create_thread style="border: solid black 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;">
-                    <div id=create_thread_thread_name_and_create_new>スレッドタイトル：<input type=text id=threti>　　<button onclick="create_new();">新規スレッド作成</button></div>
+                    <div id=create_thread_thread_name_and_create_new>スレッドタイトル：<input type=text id=threti>　　<a href="#kakikomi"><button onclick="create_new();">新規スレッド作成</button></a></div>
                     <div id=create_thread_name_and_email style=padding-top:7px;>名前：<input type=name id="itti_name"> E-Mail：<input type="email">（E-Mailは飾りです）</div>
-                    <div id=create_thread_description style=padding-top:14px;>内容：<textarea cols=45 rows="6" id=one_less_description></textarea></div>
+                    <div id=create_thread_description style=padding-top:14px;>内容：<textarea cols=45 rows="6" id=one_less_description type=text></textarea></div>
                 </div>
             </div>
             <div id=new_thread_border_b style=padding-top:10px;text-align:center;font-size:15px;>
