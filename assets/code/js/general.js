@@ -2,13 +2,14 @@ let now_url = (location.host);
 let counter = 0;
 website_host = now_url; // どこかでletされてるみたいです。
 //let kotei_url_a = 0;
-const kotei_url_a = 'https://';
+const kotei_url_a = ''; // 「https://」
 //let kotei_url_b = 0;
 const kotei_url_b = 'kurisan-fox.github';
 //let kotei_url_c = 0;
 const kotei_url_c = '.io';
 const kotei_url_all = (kotei_url_a + kotei_url_b + kotei_url_c);
 console.log('URL：' + kotei_url_all);
+let nisemonojanai = ((website_host == 'kurisan-fox.github.io') && (website_host != 'web.archive.org'));
 nisemono_checker();
 // ほぼすべてのhtmlで使うコードはここに書くと思います。
 // JSが嫌いになりそうでした。
@@ -60,9 +61,11 @@ function copyright_bottom(){
     console.log('functuin「copyright_bottom」を呼び出しました！');
 }
 
+console.log('おまんちーん' + nisemonojanai)
+
 function nisemono_checker() {
     counter = (counter + 1);
-    if ((website_host == 'kurisan-fox.github.io') && (website_host != 'web.archive.org')) {
+    if (nisemonojanai) {
         console.log('正しいページです。');
     }else{
         if(website_host == ''){
