@@ -73,6 +73,7 @@ function nisemono_checker() {
                 document.write('<body><div id=body style="position:fixed;top:0px;bottom:0px;right:0px;left:0px;color:white;font-size:25px;background-color:#CE3426;">まだある。。。</div></body>');
             }
             console.log('正しいページではないことが検知されました。');
+            console.log('Host:' + website_host);
             let timing_ut = 0;
             let timing_ut_fixed = 0;
             timing_ut = Math.floor(new Date);
