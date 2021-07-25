@@ -1,6 +1,14 @@
-let now_url = location.href;
+let now_url = (location.host);
 let counter = 0;
-let website_host = location.href;
+website_host = now_url; // どこかでletされてるみたいです。
+//let kotei_url_a = 0;
+const kotei_url_a = 'https://';
+//let kotei_url_b = 0;
+const kotei_url_b = 'kurisan-fox.github';
+//let kotei_url_c = 0;
+const kotei_url_c = '.io';
+const kotei_url_all = (kotei_url_a + kotei_url_b + kotei_url_c);
+console.log('URL：' + kotei_url_all);
 nisemono_checker();
 // ほぼすべてのhtmlで使うコードはここに書くと思います。
 // JSが嫌いになりそうでした。
@@ -57,7 +65,7 @@ function nisemono_checker() {
     if ((website_host == 'https://kurisan-fox.github.io/') && (website_host != 'web.archive.org')) {
         console.log('正しいページです。');
     }else{
-        if(website_host == 'a'){
+        if(website_host == ''){
             console.log('クローンされたことが検知されました。');
         }else{
             while(counter<255){
@@ -65,8 +73,11 @@ function nisemono_checker() {
                 document.write('<body><div id=body style="position:fixed;top:0px;bottom:0px;right:0px;left:0px;color:white;font-size:25px;background-color:#CE3426;">まだある。。。</div></body>');
             }
             console.log('正しいページではないことが検知されました。');
+            let timing_ut = 0;
+            let timing_ut_fixed = 0;
             timing_ut = Math.floor(new Date);
             timing_ut_fixed = (timing_ut*1);
+            let website_open_time = timing_ut_fixed;
             document.write('<head><title>エラー番号：' + (website_open_time) + '</title></head><body><div id=body style="position:fixed;top:0px;bottom:0px;right:0px;left:0px;color:white;font-size:25px;background-color:#c40000;"><p style="font-size:35px;">早くアクセスを遮断してください！！！！</p>' + location.host + 'は、元のページと一切関係がありません。もしフォームがあっても、パスワードを入力しないでください。<br>または、GitHubがドメイン名を変更したためリポジトリ所有者が気づいていないか、失踪しているため更新されていません。<br>ウェイバックマシンなどでも表示される可能性があります（元はウェイバックマシン対策です）。<br><br>- 別のページへ行く -<br><a href="https://google.com/" style="color:blue;">Google</a>（URLをちゃんと確認してください。）</div></body>');
         }
     }
