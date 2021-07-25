@@ -74,7 +74,7 @@ function nisemono_checker() {
             }
             console.log('正しいページではないことが検知されました。');
             console.log('Host:' + website_host);
-            console.log(website_host == 'https://kurisan-fox.github.io')
+            console.log(website_host == 'kurisan-fox.github.io')
             let timing_ut = 0;
             let timing_ut_fixed = 0;
             timing_ut = Math.floor(new Date);
