@@ -14,17 +14,33 @@
         </script><br>んなわけで、ベータ運用中です。<br>まだ改行がしっかりとできてないので、改行する際は手動で改行コードを打ち込んでください（\u003cbr\u003e）。<br>[書き込む前に読んでね]は確認してね。<br>
         <!-- スマホで開くとなぜかフォントサイズが壊れるので、このdiv内で全コードを書いています。 -->
         <!-- 問題点やもっといい方法あるよ！という意見などがあればTwitterなどで連絡できる場所ならどこでもいいので教えてくれるとめっちゃ助かります！ -->
-        <div id=body class=body style="color:black;background-color:rgb(218,255,218); border: solid black 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;">
+        <div id=body class=body style="color:black;background-color:rgb(218,255,218); border: solid black 1px; padding-top: 6.5px; padding-bottom: 6.5px; padding-left: 6.5px; padding-right: 6.5px;">
+            <div style="border: solid black 1px; padding-top: 6.5px; padding-bottom: 6.5px; padding-left: 6.5px; padding-right: 6.5px;"><div style="padding-top:2px;padding-bottom:5px;font-size:18px;"><b>偽２ちゃんねるって何？</b></div>２ちゃんねるっぽい空想スレを作成するツールみたいなやつです。<br>デマとか誹謗中傷とか喧嘩になりそうなスレのスクショやhtmlは公開しないでね。<br>使う前に<a href="before.html">書き込む前に読んでね</a>を読んでください。<br>ちなみに、書き込んでも保存されないのでリロードしたり別URLに飛んだりとページ離れると消えます。</div>
+            <div style=padding-top:10px;><div style="border: solid black 1px; padding-top: 6.5px; padding-bottom: 6.5px; padding-left: 6.5px; padding-right: 6.5px; text-align: center;font-size:15px;"><a href="before.html">書き込む前に読んでね</a> ｜ <a href="guide">偽２ちゃんねるガイド</a> ｜ <a href="dead.html">チャット</a> ｜ <a href="nise2ch.html">■掲示板一覧■</a></div></div>
+        </div><br>
+        <div id=body class=body style="color:black;background-color:rgb(218,255,218); border: solid black 1px; padding-top: 6.5px; padding-bottom: 6.5px; padding-left: 6.5px; padding-right: 6.5px;">
             <div id=new_thread_border_a>
                 <!-- スレッド作成画面 -->
-                <div id=create_thread style="border: solid black 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;">
+                <div id=create_thread style="border: solid black 1px; padding-top: 6.5px; padding-bottom: 6.5px; padding-left: 6.5px; padding-right: 6.5px;">
                     <div id=create_thread_thread_name_and_create_new>スレッドタイトル：<input type=text id=threti>　　<a href="#kakikomi"><button onclick="create_new();">新規スレッド作成</button></a></div>
                     <div id=create_thread_name_and_email style=padding-top:7px;>名前：<input type=name id="itti_name"> E-Mail：<input type="email">（E-Mailは飾りです）</div>
                     <div id=create_thread_description style=padding-top:14px;>内容：<textarea cols=45 rows="6" id=one_less_description type=text></textarea></div>
                 </div>
             </div>
             <div id=new_thread_border_b style=padding-top:10px;text-align:center;font-size:15px;>
-                <div id=create_thread style="border: solid black 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 5px; padding-right: 5px;"><a href="before.html">書き込む前に読んでね</a> ｜ <a href="">偽２ちゃんねるガイド</a> ｜ <a href="">チャット</a> ｜ <a href="">■掲示板一覧■</a></div>
+                <div id=create_thread style="border: solid black 1px; padding-top: 6.5px; padding-bottom: 6.5px; padding-left: 6.5px; padding-right: 6.5px;"><a href="before.html">書き込む前に読んでね</a> ｜ <a href="guide">偽２ちゃんねるガイド</a> ｜ <a href="dead.html">チャット</a> ｜ <a href="nise2ch.html">■掲示板一覧■</a></div>
+            </div>
+            <div style="padding-top:10px;">
+                <div style="border: solid black 1px;" class=customized_box>
+                    <p style="text-align: center;">--- 高度なカスタマイズ ---</p>
+                    <div class=customized_box_box>
+                        <p style="color:grey;padding-left:20px;">高度な設定を行えます。今後増やす予定です。空っぽにするとランダム、またはデフォルトに設定されます。</p>
+                        <br>スレ主カスタムID：<input id=thread_owner_custom_id type=text>（スレ主のIDを変えれます。）
+                        <br>無名スレ民/主のカスタマイズ：<input id=thread_default_name>
+                        <br>カスタムスタイルネームスタイル：<input id=thread_owner_custom_name_style type=text>（名前の色を変えたりできます。）
+                        <br>掲示板の仮名：<input id=keijiban_namae type=text>（掲示板の名前です。例えば、２ちゃんねるのスレッドの上側にある「２ちゃんねる」という文字あるじゃないですか。このページはデフォルトだと「偽２ちゃんねる」なんですけど、そこを変えれます。変化しない部分もあると思うけど今後対応していきます。実在する掲示板の名前を使うとかは非推奨です。）
+                    </div>
+                </div>
             </div>
         </div>
         <!-- 以下、リンク -->
