@@ -41,7 +41,7 @@ function ress() {
                 if (res_name == '') {
                     res_name = thread_default_name;
                 }
-                document.write('<div><br>' + thread_ress_count +' ：<span style="color:green;  white-space: pre-wrap;">' + res_name + '</span>：' + (thread_ress_creation.getFullYear()) + '/' + (thread_ress_creation.getMonth()+1) + '/' + (thread_ress_creation.getDate()) + '（' + thread_res_youbi[thread_ress_creation.getDay()] + '） ' + thread_ress_creation.getHours() + ':' + thread_ress_creation.getMinutes() + ':' + thread_ress_creation.getSeconds() + '<small style="color:gray;">.' + Math.floor(thread_ress_creation.getMilliseconds()*0.1) + '</small>' + ' ID: ' + thread_ress_ID);
+                document.write('<div id="ress_' + thread_ress_count +'"><br>' + thread_ress_count +' ：<span style="color:green;  white-space: pre-wrap;">' + res_name + '</span>：' + (thread_ress_creation.getFullYear()) + '/' + (thread_ress_creation.getMonth()+1) + '/' + (thread_ress_creation.getDate()) + '（' + thread_res_youbi[thread_ress_creation.getDay()] + '） ' + thread_ress_creation.getHours() + ':' + thread_ress_creation.getMinutes() + ':' + thread_ress_creation.getSeconds() + '<small style="color:gray;">.' + Math.floor(thread_ress_creation.getMilliseconds()*0.1) + '</small>' + ' ID: ' + thread_ress_ID);
                 document.writeln('<div style="padding-left:40px;">' + res_desc + '</div></div>');
             }
         }
