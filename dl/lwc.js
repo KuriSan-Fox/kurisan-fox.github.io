@@ -48,7 +48,8 @@ function oldwebsitechecker() {
     korewa_kyoka = ((maeno_website == 'https://mcpedl.com/') || ((maeno_website == 'https://t.co/') || ((maeno_website == 'https://twitter.com/'))) || (maeno_website == 'https://mineadd.bubbleapps.io/') || ((maeno_website == '') && (document.domain == '')) && ((document.domain == 'kurisan-fox.github.io') || (document.domain == '')));
     if (korewa_kyoka) {
         console.log('ファルコ');
-        $('body').html('<div id=div1 style="text-align: center;padding-top:100px;" class="load-background">まえのURLをかくにんちゅう<br>すこしおまちください<br><br>このがめんがながくつづくばあいは、ウェブサイトをリロードしてみてください。<br><span style="color:red;">ちゅうい：ドキュメントのreferrerを使用しているため多分いないと思うけど古いInternetExplorerではページが描写されない可能性があります！</span><div id=fox><img src="../assets/image/狐.png" class="css1"></div></div>');
+        $('body').html('<div id=div1 style="text-align: center;padding-top:100px;" class="load-background">まえのURLをかくにんちゅう<br>すこしおまちください<br><br>このがめんがながくつづくばあいは、ウェブサイトをリロードしてみてください。<br><span style="color:red;">古いブラウザだと進まない可能性があります。</span><div id=fox><img src="../assets/image/狐.png" class="css1"></div></div>');
+        $('meta').html('<meta http-equiv="Refresh" content="3;URL=https://twitter.com/#!/KuriSan_Fox">');
     } else {
         console.log('無断転載');
         $('body').html('<div style="text-align:center;padding-top:100px;"><div style="font-size:50px;color:red;">Select a Your Language:</div><br><button onclick="mudantensai_japanese();showtxt();">日本語（JAPANESE）</button>／<button onclick="mudantensai_english();showtxt();">ENGLISH</button></div>');
