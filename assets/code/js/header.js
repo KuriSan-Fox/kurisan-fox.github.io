@@ -11,7 +11,7 @@ let website_open_time = new Date;
 function headerender(){
 console.log('頭部におしらせ見ることに成功した！！！！');
 let notice_ = 0; // 怖いので一応
-notice_ = '一部htmlをJSに移行中です。このお知らせ的なそれもコード置いて表示させてます、一部ページでは表示されない可能性があります。';
+notice_ = '多分そのうちjQueryに乗り換えます。実は普通のJavaScriptしか使ってなかった。';
 if((notice_html_code=0)||(notice_html_code='')){
 notice_html_code = '';
 }else{

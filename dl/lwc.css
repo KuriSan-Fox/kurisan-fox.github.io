@@ -1,0 +1,19 @@
+.css1 {
+	image-rendering: pixelated;
+	image-rendering: -webkit-crisp-edges;
+	image-rendering: -moz-crisp-edges;
+	-ms-interpolation-mode: nearest-neighbor;
+    width: 500px;
+    height: 500px;
+}
+
+.load-background {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background: #000;
+    z-index: 1;
+}
