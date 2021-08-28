@@ -3,6 +3,7 @@ let maeno_website = 'Error';
 let korewa_kyoka = 'Error';
 
 let selectLanguage = 'NaN';
+// ２号.リスペクト（？）、管理しやすくなるから１行１行変数です。無駄に食ってしまう
 let Language_DescLine_0 = 'テキスト見本';
 let Language_DescLine_1 = 'テキスト見本';
 let Language_DescLine_2 = 'テキスト見本';
@@ -44,7 +45,7 @@ function showtxt() {
 
 function oldwebsitechecker() {
     maeno_website = document.referrer;
-    korewa_kyoka = ((maeno_website == 'https://mcpedl.com/') || (maeno_website == 'https://twitter.com/') || ((maeno_website == '') && (document.domain == '')) && ((document.domain == 'kurisan-fox.github.io') || (document.domain == '')));
+    korewa_kyoka = ((maeno_website == 'https://mcpedl.com/') || (maeno_website == 'https://twitter.com/') || (maeno_website == 'https://mineadd.bubbleapps.io/') || ((maeno_website == '') && (document.domain == '')) && ((document.domain == 'kurisan-fox.github.io') || (document.domain == '')));
     if (korewa_kyoka) {
         $('body').html('<div id=div1 style="text-align: center;padding-top:100px;" class="load-background">まえのURLをかくにんちゅう<br>すこしおまちください<br><br>このがめんがながくつづくばあいは、ウェブサイトをリロードしてみてください。<br><span style="color:red;">ちゅうい：ドキュメントのreferrerを使用しているため多分いないと思うけど古いInternetExplorerではページが描写されない可能性があります！</span><div id=fox><img src="../assets/image/狐.png" class="css1"></div></div>');
     } else {
